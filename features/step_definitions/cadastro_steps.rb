@@ -1,5 +1,5 @@
 Given('that i access the registration page') do
-pending # Write code here that turns the phrase above into concrete actions
+    visit "rocklov-web:3000/"
 end
 
 When('i submit my registration') do
