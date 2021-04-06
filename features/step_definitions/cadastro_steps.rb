@@ -1,11 +1,14 @@
 Given('that i access the registration page') do
-    visit "rocklov-web:3000/"
+    visit "http://rocklov-web:3000/signup"
 end
 
 When('i submit my registration') do
-pending # Write code here that turns the phrase above into concrete actions
+    find("#fullName").set "Matheus Martins"
+    find("#email").set "matheus@gamil.com"
+    find("#password").set "pwd123"
+    click_button "Cadastrar"
 end
 
 Then('i am redirected to the Dashboard') do
-pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_css ".dashboard"
 end
