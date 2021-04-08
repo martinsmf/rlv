@@ -1,10 +1,10 @@
-Given('que acesso a página principal') do
-    visit "http://rocklov-web:3000/"
+Given('that access the main page') do
+    visit "/"
   end
   
-  When('submeto minhas credenciais com {string} e {string}') do |email, password|
-    find("input[placeholder='Seu e-email']").set email
-    find("input[type=password]").set password
+When('i submit my credentials with {string} and {string}') do |email, password|
+  find("input[placeholder='Seu e-email']").set email
+  find("input[type=password]").set password
 
-    find(".btn").click
-  end
+  find(".btn").click
+end
