@@ -4,10 +4,11 @@ Feature: Login
     quero acessar o sistema da Rocklov
     para que eu possa anunciar meus equipamentos musicais
 
+        @login
         Scenario: Login do usuário
             Given que acesso a página principal
-             When submeto minhas credenciais válidas
-             Then sou redirecionado para o Dashboard
+             When submeto minhas credenciais com "matheus@qa.com" e "pwd123"
+             Then i am redirected to the Dashboard
 
         Scenario: Login sem sucesso
             Given que acesso a página principal
@@ -24,4 +25,3 @@ Feature: Login
                   | ""             | abc123 | Informe um email válido!      |
                   | teste@qa.com   | ""     | Informe sua senha secreta!    |
 
-    

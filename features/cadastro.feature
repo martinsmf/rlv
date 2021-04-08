@@ -1,9 +1,10 @@
 Feature: Cadastro de usuário
 
-              As a musician with musical equipment
+              as a musician with musical equipment
               i want to register with Rocklov
               so i cant make it available for rental.
-        @temp
+
+        @cadastro
         Scenario: Cadastro com sucesso
             Given that i access the registration page
              When i submit my registration
