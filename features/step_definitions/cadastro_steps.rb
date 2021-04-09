@@ -4,7 +4,7 @@ end
 
 When('i submit my complete registration:') do |data_table|
 # table is a Cucumber::MultilineArgument::DataTable
-    user = data_table.rows_hash
+    user = data_table.hashes.first
 
     MongoDB.new.remove_user(user[:email])
 

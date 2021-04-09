@@ -4,8 +4,11 @@ Feature: Cadastro de Anúncios
     i whant to register my equipment
     so that i can make them available for rental
 
+        @temp
         Scenario: New equipment
-            Given that i have the following equipment:
+            Given that i am logged in
+              And access the registration form
+              And that i have the following equipment:
                   | thumb    | fender-sb.jpg |
                   | name     | Fender Strato |
                   | category | Cordas        |
