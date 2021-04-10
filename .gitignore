@@ -55,6 +55,8 @@ build-iPhoneSimulator/
 #logs
 web/logs/*.log
 web/logs/*.png
-web/logs/report/*
-web/logs/allure/*
+web/logs/report/*.html
+web/logs/allure/*.csv
+web/logs/allure/*.png
+web/logs/allure/*.json
 
