@@ -1,13 +1,13 @@
-Given('that i am logged in') do
+Given('Login with {string} and {string}') do |email, password|
+    @email = email
     steps %{
         Given that access the main page
-        When i submit my credentials with "brook@onepiece.com" and "teste123"
+        When i submit my credentials with "#{email}" and "#{password}"
     }
 end
 
 Given('access the registration form') do
-    click_button "Criar anúncio"
-    expect(page).to have_css "#equipoForm"
+    @dash_page.goto_equipo_form
 end
 
 Given('that i have the following equipment:') do |data_table|
@@ -18,18 +18,10 @@ Given('that i have the following equipment:') do |data_table|
 end
 
 When('i submit the registration of that item') do
-
-   thumb = Dir.pwd + "/features/support/fixtures/images/#{@announcement[:thumb]}"
-
-    find("#thumbnail [type=file]", visible: false).set thumb
-    find("[placeholder$=equipamento]").set @announcement[:name]
-    find("#category").find("option", text: @announcement[:category]).click
-    find("[placeholder^=Valor]").set @announcement[:price]
-    click_button "Cadastrar"
+    @equipos_page.create(@announcement)
 end
 
 Then('i see of that item on Dashboard') do
-    announcement = find(".equipo-list")
-    expect(announcement).to have_content @announcement[:name]
-    expect(announcement).to have_content "R$#{@announcement[:price]}/dia"
+    expect(@dash_page.equipo_list).to have_content @announcement[:name]
+    expect(@dash_page.equipo_list).to have_content "R$#{@announcement[:price]}/dia"
 end
