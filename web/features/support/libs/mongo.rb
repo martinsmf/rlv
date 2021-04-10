@@ -6,7 +6,7 @@ class MongoDB
     attr_accessor :users, :equipos
 
     def initialize
-        client = Mongo::Client.new([ 'rocklov-db:27017' ], :database => 'rocklov')
+        client = Mongo::Client.new(CONFIG["mongo"])
         self.users = client[:users]  
         self.equipos = client[:equipos]
     end
