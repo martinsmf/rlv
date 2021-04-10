@@ -1,10 +1,7 @@
 Given('that access the main page') do
-    visit "/"
-  end
+  @login_page.open
+end
   
 When('i submit my credentials with {string} and {string}') do |email, password|
-  find("input[placeholder='Seu e-email']").set email
-  find("input[type=password]").set password
-
-  find(".btn").click
+  @login_page.with(email, password)
 end
