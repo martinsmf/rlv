@@ -4,7 +4,7 @@ Feature: Cadastro de Anúncios
     i whant to register my equipment
     so that i can make them available for rental
 
-        @temp
+        @new_equipment
         Scenario: New equipment
             Given that i am logged in
               And access the registration form
