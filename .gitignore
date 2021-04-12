@@ -5,4 +5,3 @@ web/logs/report/*.html
 web/logs/allure/*.csv
 web/logs/allure/*.png
 web/logs/allure/*.json
-
