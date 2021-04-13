@@ -1,4 +1,3 @@
-require "httparty"
 class Sessions
     include HTTParty
     base_uri "http://rocklov-api:3333"
