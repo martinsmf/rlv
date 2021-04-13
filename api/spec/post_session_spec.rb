@@ -1,16 +1,16 @@
-
+require_relative "routes/session.rb"
 describe "POST /session" do
-    it"login com sucesso" do
-        payload = { email: "brook@onepiece.com", password: "teste123"}
+    context "login com sucesso" do
+        before(:all) do
+            @result = Sessions.new.login("brook@onepiece.com", "teste123")
+        end
 
-        result = HTTParty.post("http://rocklov-api:3333/sessions",
-            body: payload.to_json,
-            headers: {
-                "Content-Type": "application/json",
-            },
-        )
-
-        expect(result.code).to eql 200
-        expect(result.parsed_response["_id"].length).to eql 24
+        it"valida status code" do
+            expect(@result.code).to eql 200
+        end
+    
+        it"valida ID do usuário" do
+            expect(@result.parsed_response["_id"].length).to eql 24
+        end
     end
 end
