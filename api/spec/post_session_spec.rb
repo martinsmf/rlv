@@ -1,5 +1,5 @@
 require_relative "routes/session.rb"
-
+require_relative "helpers"
 # DRY Don`t Repeat Yourself => Não se repita
 
 describe "POST /session" do
@@ -18,44 +18,46 @@ describe "POST /session" do
         end
     end
 
-    examples = [
-        {   
-            title: "senha incorreta",
-            payload:{ email: "brook@onepiece.com", password: "123456"},
-            code: 401,
-            error: "Unauthorized",
-        },
-        {
-            title: "usuario nao existe",
-            payload:{ email: "teste@onepiece.com", password: "123456"},
-            code: 401,
-            error: "Unauthorized",
-        },
-        {
-            title: "email em brando",
-            payload:{ email: "", password: "123456"},
-            code: 412,
-            error: "required email",
-        },
-        {
-            title: "sem o campo email",
-            payload:{password: "123456"},
-            code: 412,
-            error: "required email",
-        },
-        {
-            title: "senha em branco",
-            payload:{ email: "brook@onepiece.com", password: ""},
-            code: 412,
-            error: "required password",
-        },
-        {
-            title: "sem ocampo password",
-            payload:{ email: "brook@onepiece.com"},
-            code: 412,
-            error: "required password",
-        },
-    ]
+    examples = Helpers::get_fixture("login")
+
+    # examples = [
+    #     {   
+    #         title: "senha incorreta",
+    #         payload:{ email: "brook@onepiece.com", password: "123456"},
+    #         code: 401,
+    #         error: "Unauthorized",
+    #     },
+    #     {
+    #         title: "usuario nao existe",
+    #         payload:{ email: "teste@onepiece.com", password: "123456"},
+    #         code: 401,
+    #         error: "Unauthorized",
+    #     },
+    #     {
+    #         title: "email em brando",
+    #         payload:{ email: "", password: "123456"},
+    #         code: 412,
+    #         error: "required email",
+    #     },
+    #     {
+    #         title: "sem o campo email",
+    #         payload:{password: "123456"},
+    #         code: 412,
+    #         error: "required email",
+    #     },
+    #     {
+    #         title: "senha em branco",
+    #         payload:{ email: "brook@onepiece.com", password: ""},
+    #         code: 412,
+    #         error: "required password",
+    #     },
+    #     {
+    #         title: "sem ocampo password",
+    #         payload:{ email: "brook@onepiece.com"},
+    #         code: 412,
+    #         error: "required password",
+    #     },
+    # ]
 
     examples.each do |e|
         context "#{e[:title]}" do
