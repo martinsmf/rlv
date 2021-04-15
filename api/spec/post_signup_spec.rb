@@ -1,5 +1,3 @@
-require_relative "routes/signup.rb"
-require_relative "libs/mongo.rb"
 describe "POST /signup" do
     context "novo usuario" do
         before(:all) do

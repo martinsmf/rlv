@@ -1,5 +1,13 @@
 require "httparty"
 
+require_relative "routes/signup.rb"
+require_relative "routes/session.rb"
+require_relative "routes/equipos.rb"
+require_relative "routes/base_api.rb"
+
+require_relative "libs/mongo.rb"
+require_relative "helpers.rb"
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

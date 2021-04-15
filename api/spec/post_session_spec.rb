@@ -1,11 +1,10 @@
-require_relative "routes/session.rb"
-require_relative "helpers"
 # DRY Don`t Repeat Yourself => Não se repita
 
 describe "POST /session" do
     context "login com sucesso" do
         before(:all) do
-            payload = { email: "brook@onepice.com", password: "teste123"}
+            payload = { email: "brook@onepiece.com", password: "teste123"}
+            Signup.new.create({name: "Brook", email: "brook@onepiece.com", password: "teste123"})
             @result = Sessions.new.login(payload)
         end
 
