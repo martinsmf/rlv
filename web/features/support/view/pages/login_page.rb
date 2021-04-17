@@ -5,7 +5,7 @@ class LoginPage
     def initialize
         @login_elements = LoginElements.new
     end
-    
+
     def open
         visit "/"
     end

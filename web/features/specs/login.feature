@@ -18,7 +18,7 @@ Feature: Login
 
         Examples:
                   | email          | password | msg                              |
-                  | matheus@Qa.com | abc123   | Usuário e/ou senha inválidos.    |
+                  | matheus@qa.com | abc123   | Usuário e/ou senha inválidos.    |
                   | teste@Qa.com   | abc123   | Usuário e/ou senha inválidos.    |
                   | teste#Qa.com   | abc123   | Oops. Informe um email válido!   |
                   |                | abc123   | Oops. Informe um email válido!   |
