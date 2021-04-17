@@ -15,9 +15,9 @@ class MongoDB
         self.users.delete_many({email: email})
     end
 
-    def remove_equipo(name, email)
-        user_id = self.get_user(email)
-        self.equipos.delete_many({name: name, user: user_id})
+    def remove_equipo(name, user_id)
+        obj_id = BSON::ObjectId.from_string(user_id)
+        self.equipos.delete_many({name: name, user: obj_id})
     end
 
     def get_user(email)

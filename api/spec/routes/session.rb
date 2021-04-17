@@ -1,4 +1,3 @@
-require_relative "base_api.rb"
 class Sessions < BaseApi
     def login(payload)
 
