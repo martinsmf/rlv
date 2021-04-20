@@ -25,4 +25,8 @@ class MongoDB
         return user[:_id]
     end
 
+    def get_mongo_id
+        return BSON::ObjectId.new
+    end
+
 end
