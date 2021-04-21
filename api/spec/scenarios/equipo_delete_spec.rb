@@ -2,7 +2,7 @@
 describe "DELETE /equipos/{equipo_id}"do
 
     before(:all) do
-        payload = { email: "brook@onepiece.com", password: "teste123"}
+        payload = { email: "usop@onepiece.com", password: "teste123"}
         result = Sessions.new.login(payload)
         @user_id = result.parsed_response["_id"]
     end

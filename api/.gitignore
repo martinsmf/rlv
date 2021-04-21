@@ -1,6 +1,6 @@
 #logs
-web/logs/
-web/logs/report/
-web/logs/allure/
-web/logs/allure/
-web/logs/allure/
+apd/logs/
+api/logs/report/
+api/logs/allure/
+api/logs/allure/
+api/logs/allure/
