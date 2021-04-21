@@ -1,7 +1,6 @@
 #logs
-web/logs/*.log
-web/logs/*.png
-web/logs/report/*.html
-web/logs/allure/*.csv
-web/logs/allure/*.png
-web/logs/allure/*.json
+web/logs/
+web/logs/report/
+web/logs/allure/
+web/logs/allure/
+web/logs/allure/
