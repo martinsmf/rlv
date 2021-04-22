@@ -2,7 +2,10 @@ require "allure-cucumber"
 require "capybara"
 require "capybara/cucumber"
 require "faker"
+require "httparty"
 require "mongo"
+
+require_relative "../support/services/base_service.rb"
 
 CONFIG = YAML.load_file(File.join(Dir.pwd, "/features/support/config/#{ENV["CONFIG"]}"))
 
