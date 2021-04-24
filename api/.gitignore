@@ -1,6 +1,3 @@
-#logs
-apd/logs/
-api/logs/report/
-api/logs/allure/
-api/logs/allure/
-api/logs/allure/
+logs/*.log
+logs/*.html
+logs/*.xml
