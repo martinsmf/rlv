@@ -1,5 +1,6 @@
 ---
-default: --publish-quiet -p allure -p bdd -p local -p chrome_headless
+default: --publish-quiet -p allure -p bdd -p local -p chrome
+jenkins: --publish-quiet -p allure -p bdd -p local -p chrome_headless
 bdd: --format pretty
 dtos: --format progress
 html: -f html --out=logs/report/report.html
