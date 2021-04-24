@@ -9,7 +9,7 @@ describe "POST /session" do
         end
 
         it"valida status code" do
-            expect(@result.code).to eql 201
+            expect(@result.code).to eql 200
         end
     
         it"valida ID do usuário" do
