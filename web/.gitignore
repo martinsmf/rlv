@@ -3,4 +3,4 @@ logs/*.png
 logs/allure/
 logs/report/
 
-/Gemfile.lock
+Gemfile.lock
