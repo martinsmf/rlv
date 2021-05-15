@@ -2,7 +2,7 @@ Before do
     @alert = Alert.new
     @dash_page = DashPage.new
     @equipos_page = EquiposPage.new
-    @login_page = LoginPage.new
+    # @login_page = LoginPage.new
     @signup_page = SignupPage.new
 
     #page.driver.browser.manege.window.maximize

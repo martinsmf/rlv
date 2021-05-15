@@ -5,7 +5,10 @@ require "faker"
 require "httparty"
 require "mongo"
 
+require_relative "page_helper"
 require_relative "../support/services/base_service.rb"
+
+World(Pages)
 
 CONFIG = YAML.load_file(File.join(Dir.pwd, "/features/support/config/#{ENV["CONFIG"]}"))
 
