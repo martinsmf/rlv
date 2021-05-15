@@ -1,4 +1,5 @@
-class EquiposPage
+require_relative '../components/equipos_components.rb'
+class EquiposPage < EquposComopnents
     include Capybara::DSL
 
     def create(equipo)
@@ -21,6 +22,6 @@ class EquiposPage
     def upload(file_name)
         thumb = Dir.pwd + "/features/support/fixtures/images/#{file_name}"
 
-        find("#thumbnail [type=file]", visible: false).set thumb
+        imput_thumb.set thumb
     end
 end
